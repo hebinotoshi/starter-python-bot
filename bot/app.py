@@ -5,7 +5,23 @@ import os
 
 from beepboop import resourcer
 from beepboop import bot_manager
+#
 
+ from slackclient import SlackClient
+
+  slack_token = os.environ["SLACK_TOKEN"]
+  sc = SlackClient(slack_token)
+
+  sc.api_call(
+    "reactions.add",
+    channel="C0XXXXXXX",
+    name="general",
+    timestamp="1234567890.123456"
+  )
+
+
+
+#
 from slack_bot import SlackBot
 from slack_bot import spawn_bot
 
